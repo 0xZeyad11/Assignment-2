@@ -133,7 +133,7 @@ tasksRouter.get('/tasks', taskController.getAllTasks);
  *               $ref: '#/components/schemas/Error'
  */
 
-// tasksRouter.post('/tasks', CreateNewTask);
+tasksRouter.post('/tasks', taskController.createNewTask);
 
 
 /**

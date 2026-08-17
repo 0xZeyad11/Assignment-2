@@ -1,5 +1,5 @@
 import type { NextFunction, Request, Response } from "express";
-import type { Task, TaskRow } from "../types/tasks.type";
+import type { CreateTaskDTO, Task, TaskRow } from "../types/tasks.type";
 import { tasksRouter } from "../routes/tasks.route";
 import type { TasksRepository } from "../repositories/tasks.repo";
 import { ResponseWrapper } from "../middlewares/responseWrapper.middleware";
@@ -16,4 +16,7 @@ export class TasksService {
     return existing_task;
   }
 
+  async CreateNewTask(data: CreateTaskDTO): Promise<Task> {
+    return await this.taskRepo.createTask(data);
+  }
 }

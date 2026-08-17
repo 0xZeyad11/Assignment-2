@@ -38,7 +38,7 @@ export class TasksRepository{
   async createTask(data: CreateTaskDTO) {
     const new_task = db.prepare(
       `
-      CREATE INTO tasks (title)
+      INSERT INTO tasks (title)
       VALUES (?)
      `
     );
